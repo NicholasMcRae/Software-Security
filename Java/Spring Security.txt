@@ -11,5 +11,9 @@ Features
 		- Spring security provides defense in depth by allowing for request based authorization and method based authorization
 	- Protection against exploits
 		- Protection against common exploits
+			- Cross Site Request Forgery
+			- HTTP Headers
+			- HTTP Requests
 		- Whenver possible, the protection is enabled by default
 		- Section describes the various exploits that spring security protects against
+		
