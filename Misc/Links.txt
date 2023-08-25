@@ -1,0 +1,42 @@
+General Resources
+- https://techbeacon.com/security/developers-security-guide-50-online-resources-shift-left
+- https://stackoverflow.com/questions/2794016/what-should-every-programmer-know-about-security
+- https://martinfowler.com/articles/web-security-basics.html
+- https://wiki.owasp.org/index.php/Security_by_Design_Principles
+- https://www.fortinet.com/resources/cyberglossary/defense-in-depth
+- https://owasp.org/www-community/Threat_Modeling
+- https://www.cgisecurity.com/owasp/html/ch04s09.html
+- https://www.linuxjournal.com/article/6701
+- https://www.sans.org/top25-software-errors/
+- https://wiki.mozilla.org/WebAppSec/Secure_Coding_Guidelines - **
+
+Input Sanitization
+- https://kevinsmith.io/protect-your-php-application-from-sql-injection/
+- https://kevinsmith.io/sanitize-your-inputs/
+- https://stackoverflow.com/questions/14952842/what-is-the-best-way-to-sanitize-user-inputs
+- https://www.webopedia.com/definitions/input-sanitization/
+
+Course Skills
+- SEC522: https://www.sans.org/cyber-security-courses/application-security-securing-web-apps-api-microservices/?msc=top25hp
+- Skills Learned
+	- Defend against the attacks specified in OWASP Top 10
+	- Infrastructure security and configuration management
+	- Securely integrating cloud components into a web application
+	- Learn about Authentication and authorization mechanisms, including single sign-on patterns
+	- Understand cross-domain web request security
+	- Leverage protective HTTP headers
+	- Defending SOAP, REST and GraphQL APIs
+	- Securely implement Microservice architecture
+	- Defending against input related flaws such as SQL injection, XSS and CSRF
+	
+- SEC540: https://www.sans.org/cyber-security-courses/cloud-security-devsecops-automation/?msc=top25hp
+- Skills Learned
+	- Understand how DevOps works and identify keys to success
+	- Wire security scanning into automated CI/CD pipelines and workflows
+	- Build continuous monitoring feedback loops from production to engineering
+	- Automate configuration management using Infrastructure as Code (IaC)
+	- Secure container technologies (such as Docker and Kubernetes)
+	- Use native cloud security services and third-party tools to secure systems and applications
+	- Securely manage secrets for Continuous Integration servers and applications
+	- Integrate cloud logging and metrics
+	- Perform continuous compliance and security policy scanning

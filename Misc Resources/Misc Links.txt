@@ -1,4 +1,0 @@
-- https://techbeacon.com/security/developers-security-guide-50-online-resources-shift-left
-- https://stackoverflow.com/questions/2794016/what-should-every-programmer-know-about-security
-- https://martinfowler.com/articles/web-security-basics.html
-- https://wiki.owasp.org/index.php/Security_by_Design_Principles

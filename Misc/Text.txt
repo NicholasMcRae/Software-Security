@@ -1,0 +1,72 @@
+Principles to keep in mind if you want your applications to be secure:
+
+Never trust any input!
+Validate input from all untrusted sources - use whitelists not blacklists
+Plan for security from the start - it's not something you can bolt on at the end
+Keep it simple - complexity increases the likelihood of security holes
+Keep your attack surface to a minimum
+Make sure you fail securely
+Use defence in depth
+Adhere to the principle of least privilege
+Use threat modelling
+Compartmentalize - so your system is not all or nothing
+Hiding secrets is hard - and secrets hidden in code won't stay secret for long
+Don't write your own crypto
+Using crypto doesn't mean you're secure (attackers will look for a weaker link)
+Be aware of buffer overflows and how to protect against them
+There are some excellent books and articles online about making your applications secure:
+
+Writing Secure Code 2nd Edition - I think every programmer should read this
+Building Secure Software: How to Avoid Security Problems the Right Way
+Secure Programming Cookbook
+Exploiting Software
+Security Engineering - an excellent read
+Secure Programming for Linux and Unix HOWTO
+Train your developers on application security best pratices
+
+Codebashing (paid)
+
+Security Innovation(paid)
+
+Security Compass (paid)
+
+OWASP WebGoat (free)
+
+-------------------------------------------------
+
+Rule #1 of security for programmers: Don't roll your own
+
+Unless you are yourself a security expert and/or cryptographer, always use a well-designed, well-tested, and mature security platform, framework, or library to do the work for you. These things have spent years being thought out, patched, updated, and examined by experts and hackers alike. You want to gain those advantages, not dismiss them by trying to reinvent the wheel.
+
+Now, that's not to say you don't need to learn anything about security. You certainly need to know enough to understand what you're doing and make sure you're using the tools correctly. However, if you ever find yourself about to start writing your own cryptography algorithm, authentication system, input sanitizer, etc, stop, take a step back, and remember rule #1.
+
+Share
+Edit
+Follow
+Flag
+answered May 8, 2010 at 12:30
+community wiki
+Tyler McHenry
+10
+
+This is a bad rule in my opinion. You can essentially be targeted just because of the platform you select, rather than any real interest in your assets. Think about all of the security holes that are found in 3rd party platforms, and all of the products that are instantly vulnerable just because they use it. I wouldn't be so quick to trust my security to a 3rd party. – 
+Fosco
+ May 7, 2012 at 19:59
+9
+
+I think this is a good rule for Crypto - rolling your own encryption is a recipe for disaster. But rolling your own blog engine might be more secure as Fosco points out - if you roll your own you are less likely to be caught by automated attacks that wordpress installs have to deal with. – 
+James P McGrath
+ May 8, 2012 at 1:40
+5
+
+When it comes to crypto, this rule is absolutely correct. Don't write your own crypto, period. When it comes to using 3rd party platforms, it depends. Some platforms are inherently more secure, some platforms are inherently less secure, and most platforms probably provide some security features but also some known attack vectors. Take the recent Rails vulnerability that caused a security hole at github. Undoubtedly Rails provides many many security features, but it also has some powerful features with insecure defaults. – 
+Michael Kopinsky
+ May 8, 2012 at 2:14 
+7
+
+When it comes to crypto, don't roll your own – but do understand the thing you are using. If you don't understand why using the same encryption key for RC4 for two messages is a horrible idea, read up before using any stream cipher, for example. – 
+Christopher Creutzig
+ May 8, 2012 at 11:34
+3
+
+Even after the HeartBleed bug it is apparent this is a good rule. Imagine how hard it would have been to a find a heatbleed-like bug in a custom or proprietary project. If you roll your own, you are just hiding behind obscurity and won't know what bugs could be being exploited.
