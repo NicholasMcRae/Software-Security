@@ -1,0 +1,11 @@
+Application Security
+- Study OWASP Top 10 defense in depth
+	- With focus on sanitization
+- Defending against input related flaws such as SQL injection, XSS, and CSRF
+- Learn about authentication and authorization mechanisms, including single sign-on patterns
+	- Java mechanisms?
+- Understand cross-domain web request security
+- Leverage protective HTTP headers
+- Defending SOAP, REST, and GraphQL APIs
+- Infrastructure security and configuration management
+- Securely implement Microservice architecture
