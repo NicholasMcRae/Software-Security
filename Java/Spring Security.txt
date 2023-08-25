@@ -1,0 +1,15 @@
+- https://docs.spring.io/spring-security/reference/index.html
+Spring Security
+	- framework that provides authentication, authorization, and protection against common attacks
+	- support for securing about imperative and reactive applications, it is the de-facto standard for securing spring based applications
+Features
+	- Authentication
+		- Provides comprehensive support for authentication, how we verify the identity of who is trying to access a particular resource
+		- Spring Security provides built-in support for authenticating users
+	- Authorization
+		- determining who is allowed to access a particular resource
+		- Spring security provides defense in depth by allowing for request based authorization and method based authorization
+	- Protection against exploits
+		- Protection against common exploits
+		- Whenver possible, the protection is enabled by default
+		- Section describes the various exploits that spring security protects against
