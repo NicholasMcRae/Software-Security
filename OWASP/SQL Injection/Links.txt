@@ -1,0 +1,5 @@
+https://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php
+https://stackoverflow.com/questions/129677/how-can-i-sanitize-user-input-with-php
+https://stackoverflow.com/questions/1812891/java-escape-string-to-prevent-sql-injection
+https://stackoverflow.com/questions/4333015/does-the-preparedstatement-avoid-sql-injection
+https://stackoverflow.com/questions/1677465/how-do-i-sanitize-sql-without-using-prepared-statements
