@@ -1,0 +1,93 @@
+Published in 2010
+
+Web Application Sins
+********************
+
+SQL Injection
+- Have already done quite a bit of research on this one
+- Open Web Application Security Project guidelines
+- Any language used to interface with a database can be affected
+- Sin Explained: App is provided malformed data, which is used to build a SQL statement
+- Microsoft uses LINQ
+- Sin Pattern
+	- Takes user input
+	- Does not check user input for validity
+	- Uses user-input data to query a database
+	- Uses string concatenation or string replacement to build the SQL query
+	- Or uses the SQL exec command
+- **Always validate input
+- Can even initiate protection in stored procedures
+
+Web Server-Related Vulnerabilities (XSS, XSRF, Response Splitting)
+- most think of these as client bugs, but there has been an increase in server bugs
+- XSS bugs are not a bug in the web server itself, they are bugs in web pages rendered by the web server
+- There is no way for the browser to know which script tags are intended by the programmer, and which are injected by an attacker
+- Any language used to build a web application can be affected
+- Sin Explained
+	- Type 0: DOM-based XSS
+	- Type 1: Reflected XSS, Nonpersistent XSS
+	- Type 2: Stored XSS, Persistent XSS
+	- HTTP Response Splitting
+	- Cross-site request forgery (XSRF, sometimes CSRF)
+- Type 0
+	- attack depends on insecurely written HTML page on user's computer
+	- can pull off attack if he can get the user to launch that HTML page with malicious input
+- Type 1
+	- Build a web application
+	- Take input from user, perhaps a query string
+	- Don't validate input correctly
+	- Then echo that input directly in a web page
+	- App takes text - but the hacker provides something the app didn't expect
+	- Fun begins when an attacker provides a code fragment written in a script language, and has victim click the link
+	- This is why it's dangerous to mix code and data
+- Type 2
+	- Rather than reflecting, web server persists the input, and that user is served up later to unsuspecting victims
+	- Difference between type 1 is that there is storage
+- HTTP Response Splitting
+	- Powerful variant of XSS called response splitting
+	- Type 1 and Type 2 rely on malicious input that is inserted in the web page as part of the HTML
+	- RS is different in that malicious input is isnerted in the HTTP headers of the web page
+	- At a programmatic level, the only real difference is the functions or methods used at the server to return the untrusted data to the user
+	- **RS sins are committed using functions or methods that write to the HTTP headers, such as the ASP.NET Response.SetHeader etc
+		- Note, ASP.NET is immunite because it automatically escapes many invalid characters, including CRLF combinations
+		- It's important that you know every method that sets headers in HTTP responses, think about what these methods to
+	- It is possible to have nonpersistent and persistent HTTP response splitting variants, but they are not subdivided that way today
+	- the sort of damage an attacker can cause with an RS attack is everything he can do with an XSS attack, and more, including web and proxy cache poisoning
+- Cross-Site Request Forgery
+	- If a website is authenticated, and we can send an invalid HTTP Request
+	- There are modern methods in dealing with this problem
+- Spotting the Sin Pattern
+	- The web application takes input from an HTTP entity such as a querystring header or form
+	- The application does not check the input for validity
+	- The application echoes the data back into a browser, either in the HTML, or the HTTP headers
+	
+Web Client-Related Vulnerabilities (XSS
+- type 0 is a bug that allows an attacker to manipulate the DOM through untrusted input
+- Spotting the sin pattern
+	- It takes input from an untrusted source - anything off the web
+	- Echoes the input back out
+- Don't trust input
+	- At an absolute minimum, you should restrict incoming string length to something sane
+- Replace insecure constructs with more secure constructs
+	- Don't use innerHTML, use innerText insead, which is much safer
+	- Avoid constructing HTML and injecting it into the DOM using methods
+	
+Use of Magic URLs, Predictable Cookies, and Hidden Form Fields
+- Hidden fields are not really hidden,
+- Could send updated form with massively reduced price
+- Many web based applications carry authentication information or other important data in URLS
+- Data should not be made public, because it can be used to hijack or manipulate a session
+- The SIN Explained
+	- Data held anywhere in the URL or HTTP body for that matter,t hat is potentially sensitive is sinful if the payload is not protected by cryptographic defenses
+	- if the URL data is used for authentication purposes, then you probably have a security issue
+	- If the web site uses the data for membership, then perhaps it's not a big deadl
+- Predictable Cookies
+	- e.g. auto incrementing value in the cookie
+	- so attacker forces cookies to a different value and hijacks another user's session
+- Hidden Form Fields
+	- Passing potentially important data to your application hoping the client doesn't see it or manipulate it
+	- Malicious users could view form contents and create malicious versions to send to the server
+- Spotting the Sin Pattern
+	- Sensitive information is read by the web app from a cookie, HTTP header form, or URL
+	- The data is used to make security, trust, or authorization decisions
+	- Data is provided over an insecure or untrusted channel
