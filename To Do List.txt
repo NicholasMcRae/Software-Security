@@ -9,3 +9,5 @@ Application Security
 - Defending SOAP, REST, and GraphQL APIs
 - Infrastructure security and configuration management
 - Securely implement Microservice architecture
+
+Network Security
